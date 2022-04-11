@@ -1,12 +1,13 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 int main()
 {
     setlocale(0, "");
-    double P = 1.0;
-    double factorial, Q;
-    for (int i = 1; i <= 10; i++)
-    {
+    double p = 1.0;
+    double factorial, z, q;
+    for (int i = 1; i <= 5; i++)
+    { // обраховуємо чисельник
         factorial = 1;
         int j = 1;
         while (j <= i)
@@ -14,10 +15,11 @@ int main()
             factorial *= j;
             j++;
         }
-        Q = 2 + 1 / factorial;
-        P = P * Q;
+        z = (double)(pow(i, 2) + 2 * i + 3);
+        q = factorial / z;
+        p = p * q;
     }
-    cout << "\n:" << P << endl;
+    cout << "\nResult:" << p << endl;
     system("pause");
     return 0;
 }
