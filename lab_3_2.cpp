@@ -11,14 +11,10 @@ int main()
 
     cout << "\nEnter the number ";
     cin >> a;
-    cout << "\nEnter the degree of the number";
+    cout << "\nEnter the degree of the number ";
     cin >> b;
     switch (b)
     {
-    case 1:
-        cout << "\n"
-             << pow(a, 1.0) << endl;
-        break;
     case 2:
         cout << "\n"
              << pow(a, 2.0) << endl;
@@ -30,6 +26,10 @@ int main()
     case 4:
         cout << "\n"
              << pow(a, 4.0) << endl;
+        break;
+    case 5:
+        cout << "\n"
+             << pow(a, 5.0) << endl;
         break;
     default:
 
