@@ -1,12 +1,15 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <math.h>
 using namespace std;
 int main()
 {
     setlocale(0, "");
     float X0, Xk, delx, F;
-    int a, b, c, x;
+    int a, b, c;
+    double x;
+
     cout << "Enter Data:\n"
          << endl;
     cout << "a=";
@@ -32,7 +35,7 @@ int main()
     {
         if (x < 0 && b != 0)
         {
-            F = ((a * (x ^ 2)) + b);
+            F = ((a * (pow(x, 2))) + b);
         }
         else if (x >= 0 && b == 0)
         {
