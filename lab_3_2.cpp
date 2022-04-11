@@ -1,44 +1,39 @@
 #include <iostream>
+#include <stdio.h> /* printf */
+#include <math.h>
+
 using namespace std;
 int main()
 {
     setlocale(0, "");
-    int ch;
-    cout << "\nEnter the week day number ";
-    cin >> ch;
-    switch (ch)
+    int b;
+    double a;
+
+    cout << "\nEnter the number ";
+    cin >> a;
+    cout << "\nEnter the degree of the number";
+    cin >> b;
+    switch (b)
     {
     case 1:
         cout << "\n"
-             << ch << " - Monday" << endl;
+             << pow(a, 1.0) << endl;
         break;
     case 2:
         cout << "\n"
-             << ch << " - Tuesday" << endl;
+             << pow(a, 2.0) << endl;
         break;
     case 3:
         cout << "\n"
-             << ch << "- Wednesday" << endl;
+             << pow(a, 3.0) << endl;
         break;
     case 4:
         cout << "\n"
-             << ch << " - Thursday" << endl;
-        break;
-    case 5:
-        cout << "\n"
-             << ch << " - Friday" << endl;
-        break;
-    case 6:
-        cout << "\n"
-             << ch << "- Saturday" << endl;
-        break;
-    case 7:
-        cout << "\n"
-             << ch << "- Sunday" << endl;
+             << pow(a, 4.0) << endl;
         break;
     default:
-    {
-        cout << "\n MISTAKE!!!" << endl;
+
+        cout << "\n Sorry, this number isn't in set" << endl;
         break;
     }
-    }
+}
