@@ -13,9 +13,9 @@ int main()
     cin >> b;
     cout << "Enter c: ";
     cin >> c;
-    D = b * b - 4 * a * c;
+    // D = b * b - 4 * a * c;
 
-    if (D > 0)
+    if (D = b * b - 4 * a * c > 0 && (a) != 0 && (b) != 0 && (c) != 0)
     {
         x1 = (-1 * b + sqrt(D)) / (2 * a);
         cout << "First root = " << x1 << endl;
@@ -23,13 +23,13 @@ int main()
         cout << "Second root = " << x2 << endl;
     }
 
-    else if (D == 0 && (a) != 0 && (b) != 0 && (c) != 0)
+    else if (D = b * b - 4 * a * c == 0 && (a) != 0 && (b) != 0 && (c) != 0)
     {
         x1 = (-b) / (2 * a);
         cout << "D=0, so x= " << x1 << endl;
     }
 
-    else if (D < 0 && (a) != 0 && (b) != 0 && (c) != 0)
+    else if (D = b * b - 4 * a * c < 0 && (a) != 0 && (b) != 0 && (c) != 0)
     {
         cout << "D<0, so there are no roots" << endl;
     }
@@ -59,7 +59,15 @@ int main()
         cout << "There are no roots" << endl;
     }
 
-    else if (a == 0 && c == 0 || b == 0 && c == 0)
+    // else if (D == 0 && a == 0 && c == 0 || b == 0 && c == 0)
+    // {
+    //     cout << "Only root=0" << endl;
+    // }
+    else if (a == 0 && c == 0)
+    {
+        cout << "Only root=0" << endl;
+    }
+    else if (b == 0 && c == 0)
     {
         cout << "Only root=0" << endl;
     }
