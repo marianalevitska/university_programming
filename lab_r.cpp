@@ -58,11 +58,6 @@ int main()
     {
         cout << "There are no roots" << endl;
     }
-
-    // else if (D == 0 && a == 0 && c == 0 || b == 0 && c == 0)
-    // {
-    //     cout << "Only root=0" << endl;
-    // }
     else if (a == 0 && c == 0)
     {
         cout << "Only root=0" << endl;
