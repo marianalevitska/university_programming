@@ -36,7 +36,7 @@ int main()
       s += f(a + i * h);
     }
     double I = (h * s) / 2;
-    cout << setprecision(10) << I << endl;
+    cout << setprecision(4) << I << endl;
   }
   else
   {
