@@ -15,14 +15,13 @@ int main()
   double a, b;
   int n;
   cin >> a >> b >> n;
-  // double s = (f(a) + f(b)) / 2;
   double s = (f(b) + f(a)) / 2;
   double h = (b - a) / n;
   for (int i = 0; i <= n - 1; i++)
   {
     s += f(a + i * h);
   }
-  double I = h * s;
+  double I = (h * s) / 2;
   cout << setprecision(10) << I << endl;
 
   return 0;
