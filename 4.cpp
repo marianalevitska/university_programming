@@ -23,7 +23,7 @@ int main()
     Integral = 0.0;
     for (i = 0; i <= n; i++)
     {
-        Integral = Integral + h * f(a + h * (i - 0.5));
+        Integral = Integral + (f(b) - f(a));
         cout << "I1 = " << Integral << "\n";
     }
     system("pause");
