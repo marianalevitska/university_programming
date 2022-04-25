@@ -1,9 +1,7 @@
-
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include <math.h> // добавляем математические функции
+#include <math.h>
 using namespace std;
 
 double f(double x)
