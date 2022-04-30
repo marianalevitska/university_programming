@@ -1,70 +1,30 @@
-// #include <iostream>
-// #include <iomanip>
-// #include <cmath>
-// #include <math.h>
-// using namespace std;
-// double f(double x)
-// {
-//   return ((2 * pow(x, 4.0) + x * x + 2 * x + 1) / (x * x + 1));
-// }
-// int main()
-// {
-//   double a, b;
-//   int n;
-//   cin >> a >> b >> n;
-//   double s = (f(b) + f(a)) / 2;
-//   double h = (b - a) / n;
-//   for (int i = 0; i <= n - 1; i++)
-//   {
-//     s += f(a + i * h);
-//   }
-//   double I = (h * s) / 2;
-//   cout << setprecision(10) << I << endl;
-//   cout << "Do you want to check again ?" << endl;
-//   cout << "Write 1 if yes or 0 if no" << endl;
-//   int c;
-//   cin >> c;
-//   if (c == 1)
-//   {
-//     double a, b;
-//     int n;
-//     cin >> a >> b >> n;
-//     double s = (f(b) + f(a)) / 2;
-//     double h = (b - a) / n;
-//     for (int i = 0; i <= n - 1; i++)
-//     {
-//       s += f(a + i * h);
-//     }
-//     double I = (h * s) / 2;
-//     cout << setprecision(4) << I << endl;
-//   }
-//   else
-//   {
-//     return 0;
-//   }
-// }
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
 #include <math.h>
 using namespace std;
+
 double f(double x)
 {
-  return ((2 * pow(x, 4.0) + x * x + 2 * x + 1) / (x * x + 1));
+  return (2 * pow(x, 4.0) + x * x + 2 * x + 1) / (x * x + 1);
+}
+double Left_Rect(double a, double b, int n)
+{
+  double h = (b - a) / n;
+  double Intgrl = 0.0;
+  for (int i = 0; i <= n - 1; i++)
+  {
+    Intgrl += h * f(a + i * h);
+  }
+  return Intgrl;
 }
 int main()
 {
   double a, b;
   int n;
-  cin >> a >> b >> n;
-
-  double Left(double a, double b, int n);
-  double h = (b - a) / n;
-  double Intgrl = 0.0;
-  for (int i = 0; i <= n; i++)
-  {
-    Intgrl += f(a + i * h);
-  }
-  return Intgrl;
+  a = 2;
+  b = 3;
+  n = 1000;
+  cout << "Left_Rect " << Left_Rect(a, b, n) << endl;
+  return 0;
 }
