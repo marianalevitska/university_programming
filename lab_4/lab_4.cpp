@@ -10,8 +10,8 @@ double f(double x)
 }
 double Left_Rect(double a, double b, int n)
 {
-  double h = (b - a) / n;
-  double Intgrl = 0.0;
+  double h = (b - a) / n; // Розрахунок величини кроку інтегрування h
+  double Intgrl = 0.0;    // Тимчасовій змінній Intgrl присвоїти значення 0
   for (int i = 0; i <= n - 1; i++)
   {
     Intgrl += h * f(a + i * h);
@@ -20,11 +20,15 @@ double Left_Rect(double a, double b, int n)
 }
 int main()
 {
+  // введення змінних a,b i кількості ділянок n
   double a, b;
   int n;
-  a = 2;
-  b = 3;
-  n = 1000;
-  cout << "Left_Rect " << Left_Rect(a, b, n) << endl;
+  cout << "enter the beginning of the integration segment a: ";
+  cin >> a;
+  cout << "enter the end of the integration segment b: ";
+  cin >> b;
+  cout << "enter the number of plotsn n: ";
+  cin >> n;
+  cout << "the integral of the function on the segment [" << a << ";" << b << "] is " << Left_Rect(a, b, n) << endl;
   return 0;
 }
