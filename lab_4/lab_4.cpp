@@ -1,28 +1,34 @@
-
-
 #include <iostream>
 #include <iomanip>
 #include <cmath>
-#include <math.h> // добавляем математические функции
+#include <math.h>
 using namespace std;
 
 double f(double x)
 {
-  return ((2 * pow(x, 4.0) + x * x + 2 * x + 1) / (x * x + 1));
+  return (2 * pow(x, 4.0) + x * x + 2 * x + 1) / (x * x + 1);
+}
+double Left_Rect(double a, double b, int n)
+{
+  double h = (b - a) / n; // Розрахунок величини кроку інтегрування h
+  double Intgrl = 0.0;    // Тимчасовій змінній Intgrl присвоїти значення 0
+  for (int i = 0; i <= n - 1; i++)
+  {
+    Intgrl += h * f(a + i * h);
+  }
+  return Intgrl;
 }
 int main()
 {
+  // введення змінних a,b i кількості ділянок n
   double a, b;
   int n;
-  cin >> a >> b >> n;
-  double s = (f(b) + f(a)) / 2;
-  double h = (b - a) / n;
-  for (int i = 0; i <= n - 1; i++)
-  {
-    s += f(a + i * h);
-  }
-  double I = (h * s) / 2;
-  cout << setprecision(10) << I << endl;
-
+  cout << "enter the beginning of the integration segment a: ";
+  cin >> a;
+  cout << "enter the end of the integration segment b: ";
+  cin >> b;
+  cout << "enter the number of plotsn n: ";
+  cin >> n;
+  cout << "the integral of the function on the segment [" << a << ";" << b << "] is " << Left_Rect(a, b, n) << endl;
   return 0;
 }
