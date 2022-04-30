@@ -30,7 +30,19 @@ int main()
   cout << "enter the number of plotsn n: ";
   cin >> n;
   cout << "the integral of the function on the segment [" << a << ";" << b << "] is " << Left_Rect(a, b, n) << endl;
-  cout << "do you want to repeat counting? (y - yes) ";
+  cout << "do you want to repeat counting? (1 - yes) ";
   cin >> y;
+  if (y == 1)
+  {
+    cout << "enter the beginning of the integration segment a: ";
+    cin >> a;
+    cout << "enter the end of the integration segment b: ";
+    cin >> b;
+    cout << "enter the number of plotsn n: ";
+    cin >> n;
+    cout << "the integral of the function on the segment [" << a << ";" << b << "] is " << Left_Rect(a, b, n) << endl;
+    cout << "do you want to repeat counting? (1 - yes) ";
+    cin >> y;
+  }
   return 0;
 }
