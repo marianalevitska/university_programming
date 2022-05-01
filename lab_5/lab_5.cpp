@@ -11,7 +11,7 @@ int main()
     cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
     cin >> k;
     cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
-    srand(time(NULL)); // ініціалізація початкового заповнення
+    srand(time(0)); // ініціалізація початкового заповнення
     cout << "\n\n\trandom integers in the interval [-25;30]: \n";
     for (int i = 0; i < k; i++)
     {
