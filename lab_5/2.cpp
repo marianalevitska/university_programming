@@ -9,6 +9,7 @@ int main()
 {
     setlocale(0, "");
     int n, a, b, k, nmin, nmax, min, max, tmp;
+    int imax;
     int line[n];
     int i;
     int d;
@@ -38,42 +39,52 @@ int main()
     }
 
     cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
-    getch();
-    max = line[1];
-    min = line[1];
+    // getch();
+    // max = line[1];
+    // min = line[1];
 
-    for (i = 2; i <= n; i++)
-    {
-        if (line[i] > max)
-        {
-            max = line[i];
-            nmax = i;
-        }
-        if (line[i] < min)
-        {
-            min = line[i];
-            nmin = i;
-        }
-    }
+    // for (i = 2; i <= n; i++)
+    // {
+    //     if (line[i] > max)
+    //     {
+    //         max = line[i];
+    //         nmax = i;
+    //     }
+    //     if (line[i] < min)
+    //     {
+    //         min = line[i];
+    //         nmin = i;
+    //     }
+    // }
 
-    if (nmin > nmax)
-    {
-        for (i = nmax; i <= nmin; i++)
-        {
-            d = d * line[i];
-        }
-    }
-    else
-    {
-        for (i = nmin; i <= nmax; i++)
-        {
-            d = d * line[i];
-        }
-    }
+    // if (nmin > nmax)
+    // {
+    //     for (i = nmax; i <= nmin; i++)
+    //     {
+    //         d = d * line[i];
+    //     }
+    // }
+    // else
+    // {
+    //     for (i = nmin; i <= nmax; i++)
+    //     {
+    //         d = d * line[i];
+    //     }
+    // }
 
-    cout << "\n\n\tMinimal value [" << nmin << "]=" << min << "\n";
-    cout << "\n\n\tMaximal value [" << nmax << "]=" << max << "\n";
-    cout << "\n\n\tProduct of values between min and max = " << d << endl;
+    // cout << "\n\n\tMinimal value [" << nmin << "]=" << min << "\n";
+    // cout << "\n\n\tMaximal value [" << nmax << "]=" << max << "\n";
+    // cout << "\n\n\tProduct of values between min and max = " << d << endl;
 
-    getch();
+    // getch();
+    // for (i = max = 0, imax = line[0]; i < n; i++)
+    // {
+    //     if (max < line[i])
+    //     {
+    //         max = line[i];
+    //         imax = i;
+    //     }
+    // }
+    // cout << "\n\n\tMax value is\t" << max;
+    // cout << "\n\n\tIndex of max value is\t" << imax;
 }
