@@ -42,25 +42,30 @@ int main()
     }
 
     cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
-    auto max_value = max_element(line, line + n);
-    cout << "\n\n\tMax value is " << *max_value << endl;
-    auto min_value = min_element(line, line + n);
-    cout << "\n\n\tMin value is " << *min_value << endl;
-    for (i = max = 0, imax = line[0]; i < n; i++)
+    getch();
+    // auto max_value = max_element(line, line + n);
+    // cout << "\n\n\tMax value is " << *max_value << endl;
+    // auto min_value = min_element(line, line + n);
+    // cout << "\n\n\tMin value is " << *min_value << endl;
+    for (i = 0; i < n; i++)
     {
         if (max < line[i])
         {
+            max = line[i];
             imax = i;
         }
     }
+    cout << "\n\n\tMax value is " << max << endl;
     cout << "\n\n\tMax value index is " << imax << endl;
-    for (i = min = 0, imin = line[0]; i < n; i++)
+    for (i = 0; i < n; i++)
     {
         if (min > line[i])
         {
+            min = line[i];
             imin = i;
         }
     }
+    cout << "\n\n\tMax value is " << min << endl;
     cout << "\n\n\tMin value index is " << imin << endl;
     if (imax > imin)
     {
@@ -77,4 +82,5 @@ int main()
         }
     }
     cout << "\n\n\tThe product of elements between min and max value is " << d << endl;
+    getch();
 }
