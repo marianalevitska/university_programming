@@ -3,10 +3,6 @@
 #include <cstdlib>
 #include <windows.h>
 #include <conio.h>
-#include <algorithm>
-#include <vector>
-#include <list>
-#include <string>
 using namespace std;
 
 int main()
@@ -42,11 +38,6 @@ int main()
     }
 
     cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
-    getch();
-    // auto max_value = max_element(line, line + n);
-    // cout << "\n\n\tMax value is " << *max_value << endl;
-    // auto min_value = min_element(line, line + n);
-    // cout << "\n\n\tMin value is " << *min_value << endl;
     for (i = 0; i < n; i++)
     {
         if (max < line[i])
@@ -82,5 +73,4 @@ int main()
         }
     }
     cout << "\n\n\tThe product of elements between min and max value is " << d << endl;
-    getch();
 }
