@@ -7,9 +7,10 @@ using namespace std;
 int main()
 {
     setlocale(0, "");
-    int n, a, b;
-    int line[10];
+    int n, a, b, k;
+    int line[n];
     int i;
+    k = 0;
     cout << "\n\n\tEnter the beginnig of numbers line (a): ";
     cin >> a;
     cout << "\n\n\tEnter the end of numbers line (b): ";
@@ -25,6 +26,12 @@ int main()
         line[i] = a + rand() % b;
         cout << line[i] << "\t";
     }
-    system("pause");
-    return 0;
+    for (i = 0; i < n; i++)
+    {
+        if (line[i] < 0)
+        {
+            k += line[i];
+        }
+    }
+    cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
 }
