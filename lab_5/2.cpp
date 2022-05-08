@@ -3,6 +3,10 @@
 #include <cstdlib>
 #include <windows.h>
 #include <conio.h>
+#include <algorithm>
+#include <vector>
+#include <list>
+#include <string>
 using namespace std;
 
 int main()
@@ -10,7 +14,7 @@ int main()
     setlocale(0, "");
     int n, a, b, k, nmin, nmax, min, max, tmp;
     int imax;
-    int line[n];
+    int line[n] = {};
     int i;
     int d;
     d = 1;
@@ -39,6 +43,8 @@ int main()
     }
 
     cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
+    auto max_value = max_element(line, line + n);
+    cout << "\n\n\tMax value is " << *max_value << endl;
     // getch();
     // max = line[1];
     // min = line[1];
