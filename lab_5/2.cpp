@@ -67,7 +67,7 @@ int main()
     }
     cout << "\n\n\tMax value is " << min << endl;
     cout << "\n\n\tMin value index is " << imin << endl;
-    if (imax > imin)
+    if (imax < imin)
     {
         for (i = imax; i <= imin; i++)
         {
