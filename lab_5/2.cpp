@@ -25,6 +25,14 @@ int main()
         line[i] = a + rand() % b;
         cout << line[i] << "\t";
     }
+    for (i = 0; i < n; i++)
+    {
+        if (i < 0)
+        {
+            int neg += i;
+            cout << "\n\n\tThe sum of negative values: " << neg << endl;
+        }
+    }
 
     system("pause");
     return 0;
