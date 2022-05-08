@@ -87,4 +87,5 @@ int main()
     // }
     // cout << "\n\n\tMax value is\t" << max;
     // cout << "\n\n\tIndex of max value is\t" << imax;
+    // getch();
 }
