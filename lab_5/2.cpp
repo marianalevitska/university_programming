@@ -12,8 +12,7 @@ using namespace std;
 int main()
 {
     setlocale(0, "");
-    int n, a, b, k, nmin, nmax, min, max, tmp;
-    int imax;
+    int n, a, b, k, imin, imax, min, max;
     int line[n] = {};
     int i;
     int d;
@@ -47,13 +46,32 @@ int main()
     cout << "\n\n\tMax value is " << *max_value << endl;
     auto min_value = min_element(line, line + n);
     cout << "\n\n\tMin value is " << *min_value << endl;
-    for (i = 0; i < n; i++)
+    for (i = max = 0, imax = line[0]; i < n; i++)
     {
-        if (line[i]<max_value[i] & line[i]> min_value[i])
+        if (max < line[i])
+        {
+            imax = i;
+        }
+    }
+    cout << "\n\n\tMax value index is " << imax << endl;
+    for (i = min = 0, imin = line[0]; i < n; i++)
+    {
+        if (min > line[i])
+        {
+            imin = i;
+        }
+    }
+    cout << "\n\n\tMin value index is " << imin << endl;
+    if (imax > imin)
+    {
+        for (i = imax; i <= imin; i++)
         {
             d = d * line[i];
         }
-        else if (line[i] > max_value[i] & line[i] < min_value[i])
+    }
+    else
+    {
+        for (i = imin; i <= imax; i++)
         {
             d = d * line[i];
         }
