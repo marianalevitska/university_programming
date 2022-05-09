@@ -12,6 +12,7 @@ int main()
     int line[n] = {};
     int i;
     int d;
+    int *ptr1 = line;
     d = 1;
     k = 0;
     cout << "\n\n\tEnter the beginnig of numbers line (a): ";
@@ -26,23 +27,23 @@ int main()
     {
         if (i % 10 == 0)
             cout << "\n"; // генерація цілого випадкового числа
-        line[i] = a + rand() % b;
-        cout << line[i] << "\t";
+        *ptr1 = a + rand() % b;
+        cout << *ptr1 << "\t";
     }
     for (i = 0; i < n; i++)
     {
-        if (line[i] < 0)
+        if (*ptr1 < 0)
         {
-            k += line[i];
+            k += *ptr1;
         }
     }
 
     cout << "\n\n\tthe sum of negative values on the segment [" << a << ";" << b << "] is " << k << endl;
     for (i = 0; i < n; i++)
     {
-        if (max < line[i])
+        if (max < *ptr1)
         {
-            max = line[i];
+            max = *ptr1;
             imax = i;
         }
     }
@@ -50,9 +51,9 @@ int main()
     cout << "\n\n\tMax value index is " << imax << endl;
     for (i = 0; i < n; i++)
     {
-        if (min > line[i])
+        if (min > *ptr1)
         {
-            min = line[i];
+            min = *ptr1;
             imin = i;
         }
     }
@@ -62,14 +63,14 @@ int main()
     {
         for (i = imax; i <= imin; i++)
         {
-            d = d * line[i];
+            d = d * *ptr1;
         }
     }
     else
     {
         for (i = imin; i <= imax; i++)
         {
-            d = d * line[i];
+            d = d * *ptr1;
         }
     }
     cout << "\n\n\tThe product of elements between min and max value is " << d << endl;
