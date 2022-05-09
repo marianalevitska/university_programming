@@ -1,0 +1,34 @@
+#include <iostream>
+#include <iomanip>
+#include <cstdlib>
+
+using namespace std;
+
+int main()
+{
+    setlocale(0, "");
+    int k;
+    cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
+    cin >> k;
+    cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
+    srand(time(0)); // ініціалізація початкового заповнення
+    cout << "\n\n\trandom integers in the interval [-25;30]: \n";
+    for (int i = 0; i < k; i++)
+    {
+        if (i % 10 == 0)
+            cout << "\n"; // генерація цілого випадкового числа
+        int numb = -25 + rand() % 30;
+        cout << numb << "\t";
+    }
+
+    cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
+    for (int i = 0; i < k; i++)
+    {
+        if (i % 10 == 0)
+            cout << "\n"; // генерація дійсного випадкового числа
+        float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
+        cout << setprecision(2) << number << "\t";
+    }
+    system("pause");
+    return 0;
+}
