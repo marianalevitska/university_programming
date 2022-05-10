@@ -20,7 +20,6 @@ int main()
     for (int i = 0; i < m; i++)
     {
         if (i % k == 0 && m % k == 0)
-
             cout << "\n"; // генерація цілого випадкового числа
         int numb = -25 + rand() % 30;
         cout << numb << "\t";
