@@ -9,7 +9,7 @@ int main()
 {
     setlocale(0, "");
     int n, a, b, k, imin, imax, min, max;
-    int line[n] = {};
+    int line[n];
     int i;
     int d;
     d = 1;
