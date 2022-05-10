@@ -22,10 +22,11 @@ int main()
     cout << "\n\n\tEnter the number of items (n): ";
     cin >> n;
     cout << "\n\n\trandom integers in the interval [" << a << ";" << b << "] is" << endl;
-    cout << "\n\n\tLine";
+    cout << "\n\n\tLine\n"
+         << endl;
     for (i = 0; i < n; i++)
     {
-        cout << "\n"; // генерація цілого випадкового числа
+        // cout << "\n"; // генерація цілого випадкового числа
         *(ptr1 + i) = a + rand() % b;
         cout << *(ptr1 + i) << "\t";
     }
