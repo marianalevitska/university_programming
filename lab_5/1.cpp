@@ -25,10 +25,6 @@ int main()
             int numb = -25 + rand() % 30;
             cout << numb << "\t";
         }
-        else if (i % k != 0 || m % k != 0)
-        {
-            cout << "The number of integers isn't right";
-        }
     }
 
     cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
@@ -39,10 +35,6 @@ int main()
             cout << "\n"; // генерація дійсного випадкового числа
             float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
             cout << setprecision(2) << number << "\t";
-        }
-        else if (i % k != 0 || n % k != 0)
-        {
-            cout << "The number of valids isn't right";
         }
     }
     system("pause");
