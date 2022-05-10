@@ -25,10 +25,9 @@ int main()
             int numb = -25 + rand() % 30;
             cout << numb << "\t";
         }
-        else
+        else if (i % k != 0 || m % k != 0)
         {
-
-            cout << "The number of integers is wrong" << endl;
+            cout << "The number of integers isn't right";
         }
     }
 
@@ -41,9 +40,9 @@ int main()
             float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
             cout << setprecision(2) << number << "\t";
         }
-        else
+        else if (i % k != 0 || n % k != 0)
         {
-            cout << "The number of valids is wrong" << endl;
+            cout << "The number of valids isn't right";
         }
     }
     system("pause");
