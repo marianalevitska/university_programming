@@ -11,9 +11,9 @@ int main()
     int m = M + 1;
     int S = 0, S1 = 0, S2 = 0;
     int line[n][m];
-    cout << "\nEnter maximal walue of lines N: ";
+    cout << "\nEnter maximal value of lines N: ";
     cin >> N;
-    cout << "\nEnter maximal walue of width M: ";
+    cout << "\nEnter maximal value of width M: ";
     cin >> M;
 
     // перевірка правильності введення
