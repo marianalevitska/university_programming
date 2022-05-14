@@ -5,6 +5,17 @@ int main()
 {
     int n, m, a, b;
     int **arr = new int *[n];
+    cout << "\nEnter the dimension of the array: n = " << endl;
+    cin >> n;
+    cout << "\nEnter the dimension of the array: m = " << endl;
+    cin >> m;
+    do
+    {
+        cout << "\nEnter a i b: " << endl;
+        cin >> a >> b;
+
+    } while (a >= b);
+    cout << "\n\nArray A:" << endl;
     for (int i = 0; i < n; i++)
     {
         arr[i] = new int[m];
@@ -18,7 +29,7 @@ int main()
             cout << setw(5) << arr[i][j];
         }
     }
-
+    cout << "\n\nTransparent array A:" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << "\n\n";
