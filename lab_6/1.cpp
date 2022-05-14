@@ -4,27 +4,41 @@ using namespace std;
 int main()
 {
     setlocale(0, "");
-    int a[N][M] = {};
-    int n = N + 1, N, M, m = M + 1;
-    int A = 0, B = 0, S, S1 = 0, S2 = 0;
-    while (n > N) // перевірка правильності введення
+    int n, N, M, m, a, b;
+    int S, S1 = 0, S2 = 0;
+    int line[n][m];
+
+    cout << "\nEnter maximal lines number of massive N ";
+    cin >> N;
+    cout << "\nEnter maximal massive width M ";
+    cin >> M;
+    while (n < N) // перевірка правильності введення
     {
-        cout << "\nEnter the dimension of the matrix: n = " << endl;
+        cout << "\nEnter the dimension of the massive: n = " << endl;
         cin >> n;
+        break;
     }
-    while (A >= B)
+    while (m < M) // перевірка правильності введення
+    {
+        cout << "\nEnter the dimension of the massive: m = " << endl;
+        cin >> m;
+        break;
+    }
+    while (b >= a)
     {
         cout << "\n Enter the boundaries of the gap a i b: " << endl;
-        cin >> A >> B;
+        cin >> a >> b;
+        break;
     }
-    cout << "\n\nA matrix:" << endl;
+    cout << "\n\nA massive:" << endl;
     for (int i = 0; i < n; i++)
     {
         cout << "\n\n";
-        for (int j = 0; j < n; j++)
+        for (int j = 0; j < m; j++)
         {
-            a[i][j] = rand() % (B - A) + A;
-            cout << setw(5) << a[i][j];
+            line[i][j] = a + rand() % b;
+            cout << setw(5) << line[i][j];
         }
     }
+    return 0;
 }
