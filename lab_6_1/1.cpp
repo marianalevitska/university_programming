@@ -9,7 +9,7 @@ int main()
     int N, M, i, j, a, b;
     int n = N + 1;
     int m = M + 1;
-    int S, S1 = 0, S2 = 0;
+    int S = 0, S1 = 0, S2 = 0;
     int line[n][m];
     cout << "\nEnter maximal walue of lines N: ";
     cin >> N;
@@ -45,18 +45,18 @@ int main()
             cout << setw(5) << line[i][j];
         }
     }
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < n; i++)
     {
 
-        for (int j = 0; j < M; j++)
+        for (int j = 0; j < m; j++)
         {
             S += line[i][j];
         }
-        if (S1 < S)
+        if (S1 <= S)
         {
+            S2 = i + 1;
             S1 = S;
-            S2 = i;
-            cout << "\nThe biggest sum value is in line: " << S2;
         }
     }
+    cout << "\nThe biggest sum value is in line: " << S2;
 }
