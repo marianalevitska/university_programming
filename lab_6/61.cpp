@@ -7,7 +7,6 @@ int main()
     int n, N, M, m, a, b;
     int S, S1 = 0, S2 = 0;
     int line[n][m];
-
     cout << "\nEnter maximal lines number of massive N ";
     cin >> N;
     cout << "\nEnter maximal massive width M ";
@@ -40,5 +39,4 @@ int main()
             cout << setw(5) << line[i][j];
         }
     }
-    return 0;
 }
