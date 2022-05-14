@@ -16,22 +16,25 @@ int main()
     cout << "\nEnter maximal walue of width M: ";
     cin >> M;
 
-    while (n < N) // перевірка правильності введення
+    // перевірка правильності введення
+    do
     {
         cout << "\nEnter the dimension of the array: n = " << endl;
         cin >> n;
-    }
-    while (m < M) // перевірка правильності введення
+    } while (n > N);
+    // перевірка правильності введення
+    do
     {
         cout << "\nEnter the dimension of the array: m = " << endl;
         cin >> m;
-    }
-    while (b >= a)
+    } while (m > M);
+
+    do
     {
         cout << "\nEnter a i b: " << endl;
         cin >> a >> b;
-        break;
-    }
+
+    } while (a >= b);
     cout << "\n\nArray A:" << endl;
     for (i = 0; i < n; i++)
     {
@@ -53,6 +56,7 @@ int main()
         {
             S1 = S;
             S2 = i;
+            cout << "\nThe biggest sum value is in line: " << S2;
         }
     }
 }
