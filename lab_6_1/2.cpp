@@ -10,7 +10,8 @@ int main()
     int n = N + 1;
     int m = M + 1;
     int S = 0, S1 = 0, S2 = 0;
-    int line[n][m];
+    int **arr = new int *[n];
+
     cout << "\nEnter maximal value of lines N: ";
     cin >> N;
     cout << "\nEnter maximal value of width M: ";
@@ -36,13 +37,17 @@ int main()
 
     } while (a >= b);
     cout << "\n\nArray A:" << endl;
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
+    {
+        arr[i] = new int[m];
+    }
+    for (int i = 0; i < n; i++)
     {
         cout << "\n\n";
-        for (j = 0; j < m; j++)
+        for (int j = 0; j < m; j++)
         {
-            line[i][j] = rand() % (b - a) + a;
-            cout << setw(5) << line[i][j];
+            arr[i][j] = rand() % (b - a) + a;
+            cout << setw(5) << arr[i][j];
         }
     }
     for (int i = 0; i < n; i++)
@@ -50,7 +55,7 @@ int main()
 
         for (int j = 0; j < m; j++)
         {
-            S += line[i][j];
+            S += arr[i][j];
         }
         if (S1 <= S)
         {
@@ -59,4 +64,5 @@ int main()
         }
     }
     cout << "\nThe biggest sum value is in line: " << S2;
+    delete[] arr;
 }
