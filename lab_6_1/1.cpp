@@ -5,22 +5,36 @@ using namespace std;
 int main()
 {
     setlocale(0, "");
-    int line[n][m];
-    int n, m, N, M, i, j, a, b;
+    int N, M, i, j, a, b;
+    int n = N + 1;
+    int m = M + 1;
     int S, S1 = 0, S2 = 0;
+    int line[n][m];
+    cout << "\nEnter maximal walue of lines N: ";
+    cin >> N;
+    cout
+        << "\nEnter maximal walue of width M: ";
+    cin >> M;
+
     while (n < N) // перевірка правильності введення
     {
-        cout << "\nВведiть розмiрнiсть матрицi: n = " << endl;
+        cout << "\nEnter the dimension of the array: n = " << endl;
         cin >> n;
+        break;
+    }
+    while (m < M) // перевірка правильності введення
+    {
+        cout << "\nEnter the dimension of the array: m = " << endl;
+        cin >> m;
         break;
     }
     while (b >= a)
     {
-        cout << "\nВведiть границi пром1жку a i b: " << endl;
+        cout << "\nEnter a i b: " << endl;
         cin >> a >> b;
         break;
     }
-    cout << "\n\nМатриця А:" << endl;
+    cout << "\n\nArray A:" << endl;
     for (i = 0; i < n; i++)
     {
         cout << "\n\n";
