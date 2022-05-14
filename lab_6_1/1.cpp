@@ -42,4 +42,17 @@ int main()
             cout << setw(5) << line[i][j];
         }
     }
+    for (int i = 0; i < N; i++)
+    {
+
+        for (int j = 0; j < M; j++)
+        {
+            S += line[i][j];
+        }
+        if (S1 < S)
+        {
+            S1 = S;
+            S2 = i;
+        }
+    }
 }
