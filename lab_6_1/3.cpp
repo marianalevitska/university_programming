@@ -26,18 +26,18 @@ int main()
         for (int j = 0; j < m; j++)
         {
             arr[i][j] = rand() % (b - a) + a;
-            cout << arr[i][j];
+            cout << setw(5) << arr[i][j];
         }
     }
     cout << "\n\nTransparent array A:" << endl;
-    for (int i = 0; i < m; i++)
-    {
-        cout << "\n\n";
-        for (int j = 0; j < n; j++)
-        {
-            cout << arr[j][i];
-        }
-        cout << endl;
-    }
-    delete[] arr;
+    // for (int i = 0; i < n; i++)
+    // {
+    //     cout << "\n\n";
+    //     for (int j = 0; j < m; j++)
+    //     {
+    //         cout << setw(5) << arr[j][i];
+    //     }
+    //     cout << endl;
+    // }
+    // delete[] arr;
 }
