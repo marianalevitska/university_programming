@@ -12,11 +12,13 @@ int main()
     {
         cout << "\nВведiть розмiрнiсть матрицi: n = " << endl;
         cin >> n;
+        break;
     }
     while (b >= a)
     {
         cout << "\nВведiть границi пром1жку a i b: " << endl;
         cin >> a >> b;
+        break;
     }
     cout << "\n\nМатриця А:" << endl;
     for (i = 0; i < n; i++)
