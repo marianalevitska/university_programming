@@ -5,6 +5,7 @@ int main()
 {
     int n, m, a, b;
     int **arr = new int *[n];
+    int **arr1 = new int *[m];
     cout << "\nEnter the dimension of the array: n = " << endl;
     cin >> n;
     cout << "\nEnter the dimension of the array: m = " << endl;
@@ -26,18 +27,24 @@ int main()
         for (int j = 0; j < m; j++)
         {
             arr[i][j] = rand() % (b - a) + a;
-            cout << arr[i][j];
+            cout << setw(5) << arr[i][j];
         }
     }
+
     cout << "\n\nTransparent array A:" << endl;
+    for (int i = 0; i < m; i++)
+    {
+        arr1[i] = new int[n];
+    }
     for (int i = 0; i < m; i++)
     {
         cout << "\n\n";
         for (int j = 0; j < n; j++)
         {
-            cout << arr[j][i];
+            arr1[i][j] = arr[j][i];
+            cout << setw(5) << arr1[i][j];
         }
-        cout << endl;
     }
     delete[] arr;
+    delete[] arr1;
 }
