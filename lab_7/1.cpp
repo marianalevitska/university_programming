@@ -119,6 +119,78 @@ void arr5(int N, int M, int a1, int b1,
     cout << "\nThe biggest sum value is in line: " << S2;
     delete[] arr;
 }
+void menue(int N, int M, int n1, int m1, int **arr, int x, int a, int b, int c, double d, double e, int n, int y, int k, int m, int f, int a1, int b1, int S, int S1, int S2)
+{
+    do
+    {
+        cout << "\nenter the number of operation (from 1 to 4): ";
+        cin >> x;
+        switch (x)
+        {
+        case 1:
+            // int a, b, c;
+            cout << "\nFIRST TASK" << endl;
+            cout << "\nEnter the beginnig or counting: a ";
+            cin >> a;
+            cout << "\nEnter the end of counting: b ";
+            cin >> b;
+            cout << "\nRandom number in [a,b]: " << random(a, b, c);
+
+            break;
+        case 2:
+            // лабораторна робота 4(1)
+            // double d, e;
+            // int n, y;
+            cout << "\nSECOND TASK" << endl;
+            cout << "enter the beginning of the integration segment a: ";
+            cin >> d;
+            cout << "enter the end of the integration segment b: ";
+            cin >> e;
+            cout << "enter the number of plotsn n: ";
+            cin >> n;
+            cout << "the integral of the function on the segment [" << d << ";" << e << "] is " << Left_Rect(d, e, n) << endl;
+            cout << "do you want to repeat counting? (1 - yes) ";
+            cin >> y;
+            four(d, e, n, y);
+            break;
+        case 3:
+            // лабораторна робота 5(1)
+            // int k, m, f;
+            srand(time(0));
+            cout << "\nTHIRD TASK" << endl;
+            cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
+            cin >> k;
+            cout << "\n\n\tenter the number of integers:\n ";
+            cin >> m;
+            cout << "\n\n\tenter the number of valids:\n ";
+            cin >> f;
+            cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
+            cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
+            Int_Counter(m, k);
+            cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
+            Valid_Counter(f, k);
+            break;
+        case 4:
+            // лабораторна робота 6(1)
+
+            {
+
+                // int i, j, a1, b1;
+                // int S = 0, S1 = 0, S2 = 0;
+                cout << "\nEnter maximal value of lines N: ";
+                cin >> N;
+                cout << "\nEnter maximal value of width M: ";
+                cin >> M;
+                arr5(N, M, a1, b1, n1, m1, S, S1, S2, arr);
+            }
+
+            break;
+        default:
+            cout << "\nenter the number between 1 and 4";
+            break;
+        }
+    } while (x > 4);
+}
 int main()
 {
     int N, M;
@@ -127,72 +199,12 @@ int main()
     int m1 = M + 1;
     int **arr = new int *[n1];
     int x;
-    cout << "\nenter the number of operation (from 1 to 4): ";
-    cin >> x;
-    switch (x)
-    {
-    case 1:
-        int a, b, c;
-        cout << "\nFIRST TASK" << endl;
-        cout << "\nEnter the beginnig or counting: a ";
-        cin >> a;
-        cout << "\nEnter the end of counting: b ";
-        cin >> b;
-        cout << "\nRandom number in [a,b]: " << random(a, b, c);
-
-        break;
-    case 2:
-        // лабораторна робота 4(1)
-        double d, e;
-        int n, y;
-        cout << "\nSECOND TASK" << endl;
-        cout << "enter the beginning of the integration segment a: ";
-        cin >> d;
-        cout << "enter the end of the integration segment b: ";
-        cin >> e;
-        cout << "enter the number of plotsn n: ";
-        cin >> n;
-        cout << "the integral of the function on the segment [" << d << ";" << e << "] is " << Left_Rect(d, e, n) << endl;
-        cout << "do you want to repeat counting? (1 - yes) ";
-        cin >> y;
-        four(d, e, n, y);
-        break;
-    case 3:
-        // лабораторна робота 5(1)
-        int k, m, f;
-        srand(time(0));
-        cout << "\nTHIRD TASK" << endl;
-        cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
-        cin >> k;
-        cout << "\n\n\tenter the number of integers:\n ";
-        cin >> m;
-        cout << "\n\n\tenter the number of valids:\n ";
-        cin >> f;
-        cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
-        cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
-        Int_Counter(m, k);
-        cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
-        Valid_Counter(f, k);
-        break;
-    case 4:
-        // лабораторна робота 6(1)
-
-        {
-
-            int i, j, a1, b1;
-            int S = 0, S1 = 0, S2 = 0;
-            cout << "\nEnter maximal value of lines N: ";
-            cin >> N;
-            cout << "\nEnter maximal value of width M: ";
-            cin >> M;
-            arr5(N, M, a1, b1, n1, m1, S, S1, S2, arr);
-        }
-
-        break;
-    default:
-        cout << "\nenter the number between 1 and 4";
-        break;
-    }
-
+    int a, b, c;
+    double d, e;
+    int n, y;
+    int k, m, f;
+    int i, j, a1, b1;
+    int S = 0, S1 = 0, S2 = 0;
+    menue(N, M, n1, m1, arr, x, a, b, c, d, e, n, y, k, m, f, a1, b1, S, S1, S2);
     return 0;
 }
