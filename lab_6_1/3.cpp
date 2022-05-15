@@ -48,14 +48,28 @@ int main()
         }
     }
     cout << "\nMaximal value of main diagonal: ";
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < m; i++)
     {
+
         if (arr1[i][i] > max)
         {
             max = arr1[i][i];
         }
-        cout << max;
     }
+    cout << max;
+    cout << "\nMaximal value of main diagonal: ";
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (arr1[j][j] < min)
+            {
+                min = arr1[j][j];
+            }
+        }
+    }
+    cout << min;
+
     delete[] arr;
     delete[] arr1;
 }
