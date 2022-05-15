@@ -119,15 +119,8 @@ void arr5(int N, int M, int a1, int b1,
     cout << "\nThe biggest sum value is in line: " << S2;
     delete[] arr;
 }
-int main()
+void menue(int N, int M, int n1, int m1, int **arr, int x, int a, int b, int c, double d, double e, int n, int y, int k, int m, int f, int a1, int b1, int S, int S1, int S2)
 {
-    int N, M;
-    // для case 4
-    int n1 = N + 1;
-    int m1 = M + 1;
-    int **arr = new int *[n1];
-    int x;
-
     do
     {
         cout << "\nenter the number of operation (from 1 to 4): ";
@@ -135,7 +128,7 @@ int main()
         switch (x)
         {
         case 1:
-            int a, b, c;
+            // int a, b, c;
             cout << "\nFIRST TASK" << endl;
             cout << "\nEnter the beginnig or counting: a ";
             cin >> a;
@@ -146,8 +139,8 @@ int main()
             break;
         case 2:
             // лабораторна робота 4(1)
-            double d, e;
-            int n, y;
+            // double d, e;
+            // int n, y;
             cout << "\nSECOND TASK" << endl;
             cout << "enter the beginning of the integration segment a: ";
             cin >> d;
@@ -162,7 +155,7 @@ int main()
             break;
         case 3:
             // лабораторна робота 5(1)
-            int k, m, f;
+            // int k, m, f;
             srand(time(0));
             cout << "\nTHIRD TASK" << endl;
             cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
@@ -182,8 +175,8 @@ int main()
 
             {
 
-                int i, j, a1, b1;
-                int S = 0, S1 = 0, S2 = 0;
+                // int i, j, a1, b1;
+                // int S = 0, S1 = 0, S2 = 0;
                 cout << "\nEnter maximal value of lines N: ";
                 cin >> N;
                 cout << "\nEnter maximal value of width M: ";
@@ -197,6 +190,21 @@ int main()
             break;
         }
     } while (x > 4);
-
+}
+int main()
+{
+    int N, M;
+    // для case 4
+    int n1 = N + 1;
+    int m1 = M + 1;
+    int **arr = new int *[n1];
+    int x;
+    int a, b, c;
+    double d, e;
+    int n, y;
+    int k, m, f;
+    int i, j, a1, b1;
+    int S = 0, S1 = 0, S2 = 0;
+    menue(N, M, n1, m1, arr, x, a, b, c, d, e, n, y, k, m, f, a1, b1, S, S1, S2);
     return 0;
 }
