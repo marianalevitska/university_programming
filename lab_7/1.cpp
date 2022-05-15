@@ -39,6 +39,33 @@ void four(double d, double e, int n, int y)
     }
 }
 // -------------------
+// лабораторна робота 5(1)
+void Int_Counter(int m, int k)
+{
+
+    for (int i = 0; i < m; i++)
+    {
+        if (i % k == 0 && m % k == 0)
+            cout << "\n"; // генерація цілого випадкового числа
+        int numb = -25 + rand() % 30;
+        cout << numb << "\n";
+    }
+    system("pause");
+}
+void Valid_Counter(int f, int k)
+{
+
+    for (int i = 0; i < f; i++)
+    {
+        if (i % k == 0 && f % k == 0)
+
+            cout << "\n"; // генерація дійсного випадкового числа
+        float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
+        cout << setprecision(2) << number << "\t";
+    }
+    system("pause");
+}
+
 int main()
 {
     int a, b, c;
@@ -61,5 +88,20 @@ int main()
     cout << "the integral of the function on the segment [" << d << ";" << e << "] is " << Left_Rect(d, e, n) << endl;
     cout << "do you want to repeat counting? (1 - yes) ";
     cin >> y;
+    four(d, e, n, y);
     // ----------
+    // лабораторна робота 5(1)
+    int k, m, f;
+    cout << "\nTHIRD TASK" << endl;
+    cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
+    cin >> k;
+    cout << "\n\n\tenter the number of integers:\n ";
+    cin >> m;
+    cout << "\n\n\tenter the number of valids:\n ";
+    cin >> f;
+    cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
+    cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
+    Int_Counter(m, k);
+    cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
+    Valid_Counter(n, k);
 }
