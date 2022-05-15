@@ -48,7 +48,7 @@ void Int_Counter(int m, int k)
         if (i % k == 0 && m % k == 0)
             cout << "\n"; // генерація цілого випадкового числа
         int numb = -25 + rand() % 30;
-        cout << numb << "\n";
+        cout << numb << "\t";
     }
 }
 void Valid_Counter(int f, int k)
@@ -60,7 +60,7 @@ void Valid_Counter(int f, int k)
 
             cout << "\n"; // генерація дійсного випадкового числа
         float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
-        cout << setprecision(2) << number << "\n";
+        cout << setprecision(2) << number << "\t";
     }
 }
 
