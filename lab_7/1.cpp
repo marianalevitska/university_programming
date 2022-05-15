@@ -4,6 +4,7 @@
 #include <math.h>
 #include <cstdlib>
 using namespace std;
+// завдання 1
 int random(int a, int b, int c)
 {
     return c = a + rand() % (b - a);
@@ -64,7 +65,6 @@ void Valid_Counter(int f, int k)
     }
 }
 // лабораторна робота 6(1)
-
 void arr5(int N, int M, int a1, int b1,
           int n1,
           int m1,
@@ -119,6 +119,7 @@ void arr5(int N, int M, int a1, int b1,
     cout << "\nThe biggest sum value is in line: " << S2;
     delete[] arr;
 }
+// меню вибору
 void menue(int N, int M, int n1, int m1, int **arr, int x, int a, int b, int c, double d, double e, int n, int y, int k, int m, int f, int a1, int b1, int S, int S1, int S2)
 {
     do
