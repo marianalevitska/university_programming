@@ -50,7 +50,6 @@ void Int_Counter(int m, int k)
         int numb = -25 + rand() % 30;
         cout << numb << "\n";
     }
-    system("pause");
 }
 void Valid_Counter(int f, int k)
 {
@@ -61,9 +60,8 @@ void Valid_Counter(int f, int k)
 
             cout << "\n"; // генерація дійсного випадкового числа
         float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
-        cout << setprecision(2) << number << "\t";
+        cout << setprecision(2) << number << "\n";
     }
-    system("pause");
 }
 
 int main()
@@ -92,6 +90,7 @@ int main()
     // ----------
     // лабораторна робота 5(1)
     int k, m, f;
+    srand(time(0));
     cout << "\nTHIRD TASK" << endl;
     cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
     cin >> k;
@@ -103,5 +102,7 @@ int main()
     cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
     Int_Counter(m, k);
     cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
-    Valid_Counter(n, k);
+    Valid_Counter(f, k);
+
+    return 0;
 }
