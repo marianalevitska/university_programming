@@ -48,9 +48,8 @@ void Int_Counter(int m, int k)
         if (i % k == 0 && m % k == 0)
             cout << "\n"; // генерація цілого випадкового числа
         int numb = -25 + rand() % 30;
-        cout << numb << "\n";
+        cout << numb << "\t";
     }
-    system("pause");
 }
 void Valid_Counter(int f, int k)
 {
@@ -63,45 +62,150 @@ void Valid_Counter(int f, int k)
         float number = 1.0 + (float)rand() / RAND_MAX * 10 - 5.0;
         cout << setprecision(2) << number << "\t";
     }
-    system("pause");
+}
+// лабораторна робота 6(1)
+void arr1(int n1, int N)
+{
+    do
+    {
+        cout << "\nEnter the dimension of the array: n = " << endl;
+        cin >> n1;
+    } while (n1 > N);
+}
+// перевірка правильності введення
+void arr2(int m1, int M)
+{
+    do
+    {
+        cout << "\nEnter the dimension of the array: m = " << endl;
+        cin >> m1;
+    } while (m1 > M);
 }
 
+void arr3(int a1, int b1)
+{
+    do
+    {
+        cout << "\nEnter a i b: " << endl;
+        cin >> a1 >> b1;
+
+    } while (a1 >= b1);
+}
+
+void arr4(int a1, int b1,
+          int n1,
+          int m1,
+          int **arr)
+{
+    for (int i = 0; i < n1; i++)
+    {
+        arr[i] = new int[m1];
+    }
+    for (int i = 0; i < n1; i++)
+    {
+        cout << "\n\n";
+        for (int j = 0; j < m1; j++)
+        {
+            arr[i][j] = rand() % (b1 - a1) + a1;
+            cout << setw(5) << arr[i][j];
+        }
+    }
+}
+void arr5(int a1, int b1,
+          int n1,
+          int m1,
+          int S, int S1, int S2,
+          int **arr)
+{
+    for (int i = 0; i < n1; i++)
+    {
+
+        for (int j = 0; j < m1; j++)
+        {
+            S += arr[i][j];
+        }
+        if (S1 <= S)
+        {
+            S2 = i + 1;
+            S1 = S;
+        }
+    }
+}
 int main()
 {
-    int a, b, c;
-    cout << "\nFIRST TASK" << endl;
-    cout << "\nEnter the beginnig or counting: a ";
-    cin >> a;
-    cout << "\nEnter the end of counting: b ";
-    cin >> b;
-    cout << "\nRandom number in [a,b]: " << random(a, b, c);
-    cout << "\nSECOND TASK" << endl;
-    // лабораторна робота 4(1)
-    double d, e;
-    int n, y;
-    cout << "enter the beginning of the integration segment a: ";
-    cin >> d;
-    cout << "enter the end of the integration segment b: ";
-    cin >> e;
-    cout << "enter the number of plotsn n: ";
-    cin >> n;
-    cout << "the integral of the function on the segment [" << d << ";" << e << "] is " << Left_Rect(d, e, n) << endl;
-    cout << "do you want to repeat counting? (1 - yes) ";
-    cin >> y;
-    four(d, e, n, y);
-    // ----------
-    // лабораторна робота 5(1)
-    int k, m, f;
-    cout << "\nTHIRD TASK" << endl;
-    cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
-    cin >> k;
-    cout << "\n\n\tenter the number of integers:\n ";
-    cin >> m;
-    cout << "\n\n\tenter the number of valids:\n ";
-    cin >> f;
-    cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
-    cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
-    Int_Counter(m, k);
-    cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
-    Valid_Counter(n, k);
+    int N, M;
+    // для case 4
+    int n1 = N + 1;
+    int m1 = M + 1;
+    int **arr = new int *[n1];
+    int x;
+    cout << "\nenter the number of operation: ";
+    cin >> x;
+    switch (x)
+    {
+    case 1:
+        int a, b, c;
+        cout << "\nFIRST TASK" << endl;
+        cout << "\nEnter the beginnig or counting: a ";
+        cin >> a;
+        cout << "\nEnter the end of counting: b ";
+        cin >> b;
+        cout << "\nRandom number in [a,b]: " << random(a, b, c);
+
+        break;
+    case 2:
+        // лабораторна робота 4(1)
+        double d, e;
+        int n, y;
+        cout << "\nSECOND TASK" << endl;
+        cout << "enter the beginning of the integration segment a: ";
+        cin >> d;
+        cout << "enter the end of the integration segment b: ";
+        cin >> e;
+        cout << "enter the number of plotsn n: ";
+        cin >> n;
+        cout << "the integral of the function on the segment [" << d << ";" << e << "] is " << Left_Rect(d, e, n) << endl;
+        cout << "do you want to repeat counting? (1 - yes) ";
+        cin >> y;
+        four(d, e, n, y);
+        break;
+    case 3:
+        // лабораторна робота 5(1)
+        int k, m, f;
+        srand(time(0));
+        cout << "\nTHIRD TASK" << endl;
+        cout << "\n\n\tenter the number of values in one line( 3 <= k <= 10):\n ";
+        cin >> k;
+        cout << "\n\n\tenter the number of integers:\n ";
+        cin >> m;
+        cout << "\n\n\tenter the number of valids:\n ";
+        cin >> f;
+        cout << "\n\n\tGENERATING RANDOM NUMBERS\n";
+        cout << "\n\n\trandom integers in the interval [-25;30]:\n ";
+        Int_Counter(m, k);
+        cout << "\n\n\tvalid random numbers in the interval [1;5]:\n";
+        Valid_Counter(f, k);
+        break;
+    case 4:
+        // лабораторна робота 6(1)
+        int i, j, a1, b1;
+        int S = 0, S1 = 0, S2 = 0;
+        cout << "\nEnter maximal value of lines N: ";
+        cin >> N;
+        cout << "\nEnter maximal value of width M: ";
+        cin >> M;
+        arr1(n1, N);
+        arr2(m1, M);
+        arr3(a1, b1);
+        cout << "\n\nArray A:" << endl;
+        arr4(a1, b1, n1, m1, arr);
+        arr5(a1, b1, n1, m1, S, S1, S2, arr);
+        cout << "\nThe biggest sum value is in line: " << S2;
+        break;
+    default:
+        cout << "\nenter the number between 1 and 4";
+        break;
+    }
+
+    return 0;
 }
