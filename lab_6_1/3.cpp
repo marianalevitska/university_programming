@@ -4,6 +4,8 @@ using namespace std;
 int main()
 {
     int n, m, a, b;
+    int max = 0;
+    int min = 0;
     int **arr = new int *[n];
     int **arr1 = new int *[m];
     cout << "\nEnter the dimension of the array: n = " << endl;
@@ -44,6 +46,15 @@ int main()
             arr1[i][j] = arr[j][i];
             cout << setw(5) << arr1[i][j];
         }
+    }
+    cout << "\nMaximal value of main diagonal: ";
+    for (int i = 0; i < n; i++)
+    {
+        if (arr1[i][i] > max)
+        {
+            max = arr1[i][i];
+        }
+        cout << max;
     }
     delete[] arr;
     delete[] arr1;
