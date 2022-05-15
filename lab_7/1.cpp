@@ -64,39 +64,32 @@ void Valid_Counter(int f, int k)
     }
 }
 // лабораторна робота 6(1)
-void arr1(int n1, int N)
+
+void arr5(int N, int M, int a1, int b1,
+          int n1,
+          int m1,
+          int S, int S1, int S2,
+          int **arr)
 {
     do
     {
         cout << "\nEnter the dimension of the array: n = " << endl;
         cin >> n1;
     } while (n1 > N);
-}
-// перевірка правильності введення
-void arr2(int m1, int M)
-{
+    // перевірка правильності введення
     do
     {
         cout << "\nEnter the dimension of the array: m = " << endl;
         cin >> m1;
     } while (m1 > M);
-}
 
-void arr3(int a1, int b1)
-{
     do
     {
         cout << "\nEnter a i b: " << endl;
         cin >> a1 >> b1;
 
     } while (a1 >= b1);
-}
-
-void arr4(int a1, int b1,
-          int n1,
-          int m1,
-          int **arr)
-{
+    cout << "\n\nArray A:" << endl;
     for (int i = 0; i < n1; i++)
     {
         arr[i] = new int[m1];
@@ -110,13 +103,6 @@ void arr4(int a1, int b1,
             cout << setw(5) << arr[i][j];
         }
     }
-}
-void arr5(int a1, int b1,
-          int n1,
-          int m1,
-          int S, int S1, int S2,
-          int **arr)
-{
     for (int i = 0; i < n1; i++)
     {
 
@@ -130,6 +116,8 @@ void arr5(int a1, int b1,
             S1 = S;
         }
     }
+    cout << "\nThe biggest sum value is in line: " << S2;
+    delete[] arr;
 }
 int main()
 {
@@ -139,7 +127,7 @@ int main()
     int m1 = M + 1;
     int **arr = new int *[n1];
     int x;
-    cout << "\nenter the number of operation: ";
+    cout << "\nenter the number of operation (from 1 to 4): ";
     cin >> x;
     switch (x)
     {
@@ -188,23 +176,22 @@ int main()
         break;
     case 4:
         // лабораторна робота 6(1)
-        int i, j, a1, b1;
-        int S = 0, S1 = 0, S2 = 0;
-        cout << "\nEnter maximal value of lines N: ";
-        cin >> N;
-        cout << "\nEnter maximal value of width M: ";
-        cin >> M;
-        arr1(n1, N);
-        arr2(m1, M);
-        arr3(a1, b1);
-        cout << "\n\nArray A:" << endl;
-        arr4(a1, b1, n1, m1, arr);
-        arr5(a1, b1, n1, m1, S, S1, S2, arr);
-        cout << "\nThe biggest sum value is in line: " << S2;
+
+        {
+
+            int i, j, a1, b1;
+            int S = 0, S1 = 0, S2 = 0;
+            cout << "\nEnter maximal value of lines N: ";
+            cin >> N;
+            cout << "\nEnter maximal value of width M: ";
+            cin >> M;
+            arr5(N, M, a1, b1, n1, m1, S, S1, S2, arr);
+        }
+
         break;
-        // default:
-        //     cout << "\nenter the number between 1 and 4";
-        //     break;
+    default:
+        cout << "\nenter the number between 1 and 4";
+        break;
     }
 
     return 0;
