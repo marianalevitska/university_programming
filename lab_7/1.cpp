@@ -202,9 +202,9 @@ int main()
         arr5(a1, b1, n1, m1, S, S1, S2, arr);
         cout << "\nThe biggest sum value is in line: " << S2;
         break;
-    default:
-        cout << "\nenter the number between 1 and 4";
-        break;
+        // default:
+        //     cout << "\nenter the number between 1 and 4";
+        //     break;
     }
 
     return 0;
