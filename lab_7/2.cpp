@@ -4,12 +4,12 @@
 #include <math.h>
 #include <cstdlib>
 using namespace std;
-bool check_polindrom(string word)
+bool check_polindrom(string str)
 {
-    int len = word.length();
-    for (int i = 0; i < len / 2; ++i)
+
+    for (int i = 0; i < str.length(); i++)
     {
-        if (word[i] != word[len - i - 1])
+        if (str[i] != str[str.length() - i - 1])
         {
             return false;
         }
@@ -20,7 +20,7 @@ bool check_polindrom(string word)
 int main()
 {
     string str;
-    cout << "Enter the word: ";
+    cout << "Enter the word or number: ";
     cin >> str;
     if (check_polindrom(str))
     {
