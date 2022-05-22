@@ -6,9 +6,7 @@
 #include <ctype.h>
 #include <conio.h>
 using namespace std;
-// int count_words_odd(const char *m);
-// void print_repchar(FILE *_out, const char *s);
-// char *str_rem(char *s, char fc, char lc);
+
 // кількість слів непарної довжини
 int count_words_odd(char *s)
 {
@@ -28,16 +26,8 @@ int count_words_odd(char *s)
 }
 
 // частота входження кожної літери
-// void letter_frequency(char *p, int total, int k)
-// {
-//     cout << "Letter repetition frequency in %";
-//     for (int i = 0; i < k; i++)
-//     {
-//         p[i] = (p[i] * 100 / total);
-//         cout << char(i + 'A') << '\t' << p[i] << endl;
-//     }
-// }
-void print_repchar(FILE *_out, const char *s)
+
+void print_repchar(FILE *_out, char *s)
 {
     int i;
     unsigned int abc[26];
@@ -60,21 +50,21 @@ void print_repchar(FILE *_out, const char *s)
 }
 
 // видаляє текст в круглях дужках
-char *str_rem(char *s, char fc, char lc)
+char *str_rem(char *s, char f, char c)
 {
     char *i, *p, *t = s;
-    while (*s && (*s != fc))
+    while (*s && (*s != f))
         ++s;
 
     for (p = s; *s; *s = *p)
     {
-        if (*p == fc)
+        if (*p == f)
         {
             i = p + 1;
-            while (*i && (*i != lc))
+            while (*i && (*i != c))
                 ++i;
 
-            if (*i == lc)
+            if (*i == c)
             {
                 ++s;
                 p = i;
@@ -96,13 +86,8 @@ int main(void)
     cin >> k;
     cout << "Enter the line, which finished with '.' ";
     cin.getline(s, k, '.');
-    printf("count words odd: \n", count_words_odd(s));
-    // cout << "Letter repetition frequency in %";
-    // for (int i = 0; i < k; i++)
-    // {
-    //     s[i] = (s[i] * 100 / total);
-    //     cout << char(i + 'A') << '\t' << s[i] << endl;
-    // }
+    cout << "count words odd: \n";
+    count_words_odd(s);
     print_repchar(stdout, s);
     // letter_frequency(p, total, k);
     puts(s);
