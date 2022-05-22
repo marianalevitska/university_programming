@@ -5,7 +5,7 @@
 int main()
 {
     char ch;
-    printf("Input text. \n");
+    printf("Enter text. \n");
     do
     {
         ch = getchar();
