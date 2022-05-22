@@ -4,27 +4,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <conio.h>
 using namespace std;
-unsigned count_words_odd(const char *s);
-void print_repchar(FILE *_out, const char *s);
-char *str_rem(char *s, char fc, char lc);
-
-int main(void)
-{
-    char s[100];
-    cout << "Enter the line, which finished with '.' ";
-    cin.getline(s, 100, '.');
-    printf("count words odd: %u\n", count_words_odd(s));
-    print_repchar(stdout, s);
-    puts(s);
-    puts(str_rem(s, '(', ')'));
-    return 0;
-}
-
+// int count_words_odd(const char *m);
+// void print_repchar(FILE *_out, const char *s);
+// char *str_rem(char *s, char fc, char lc);
 // кількість слів непарної довжини
-unsigned count_words_odd(const char *s)
+int count_words_odd(char *s)
 {
-    unsigned i = 0, n = 0;
+    int i = 0, n = 0;
     do
     {
         if (isalnum(*s))
@@ -40,6 +28,15 @@ unsigned count_words_odd(const char *s)
 }
 
 // частота входження кожної літери
+// void letter_frequency(char *p, int total, int k)
+// {
+//     cout << "Letter repetition frequency in %";
+//     for (int i = 0; i < k; i++)
+//     {
+//         p[i] = (p[i] * 100 / total);
+//         cout << char(i + 'A') << '\t' << p[i] << endl;
+//     }
+// }
 void print_repchar(FILE *_out, const char *s)
 {
     int i;
@@ -88,4 +85,27 @@ char *str_rem(char *s, char fc, char lc)
         ++p;
     }
     return t;
+}
+
+int main(void)
+{
+    int total = 0;
+    int k;
+    char s[k];
+    cout << "Enter maximal value of numbers in line: ";
+    cin >> k;
+    cout << "Enter the line, which finished with '.' ";
+    cin.getline(s, k, '.');
+    printf("count words odd: \n", count_words_odd(s));
+    // cout << "Letter repetition frequency in %";
+    // for (int i = 0; i < k; i++)
+    // {
+    //     s[i] = (s[i] * 100 / total);
+    //     cout << char(i + 'A') << '\t' << s[i] << endl;
+    // }
+    print_repchar(stdout, s);
+    // letter_frequency(p, total, k);
+    puts(s);
+    puts(str_rem(s, '(', ')'));
+    return 0;
 }
