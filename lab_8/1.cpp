@@ -30,7 +30,7 @@ int count_words_odd(char *s)
 void print_repchar(FILE *_out, char *s)
 {
     int i;
-    unsigned int abc[26];
+    int abc[26];
 
     memset(abc, 0, sizeof(abc));
     while (*s)
