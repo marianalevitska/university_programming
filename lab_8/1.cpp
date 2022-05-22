@@ -86,8 +86,7 @@ int main(void)
     cin >> k;
     cout << "Enter the line, which finished with '.' ";
     cin.getline(s, k, '.'); //введення даних з потоку до роздільника *.*
-    cout << "count words odd: \n";
-    count_words_odd(s);
+    printf("count words odd: %u\n", count_words_odd(s));
     print_repchar(stdout, s);
     puts(s);                    //Виводить рядок s та перехід на наступний рядок
     puts(str_rem(s, '(', ')')); //виводить рядок s з виделеним текстом в ()
