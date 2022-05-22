@@ -13,7 +13,7 @@ int count_words_odd(char *s)
     int i = 0, n = 0;
     do
     {
-        if (isalnum(*s))
+        if (isalnum(*s)) // Перевірка, чи є символ літерою або цифрою
             ++i;
         else if (i > 0)
         {
@@ -27,15 +27,15 @@ int count_words_odd(char *s)
 
 // частота входження кожної літери
 
-void print_repchar(FILE *_out, char *s)
+void print_repchar(FILE *out, char *s) // FILE out - поток
 {
     int i;
     int abc[26];
 
-    memset(abc, 0, sizeof(abc));
+    memset(abc, 0, sizeof(abc)); //заповнює перші sizeof(abc) - довжина в байтах цифрою 0
     while (*s)
     {
-        i = toupper(*s);
+        i = toupper(*s); //перетворює символ у верхній регістр
         if (i >= 'A' && i <= 'Z')
             ++abc[i - 'A'];
         ++s;
@@ -44,9 +44,9 @@ void print_repchar(FILE *_out, char *s)
     for (i = 0; i < 26; ++i)
     {
         if (abc[i] > 0)
-            fprintf(_out, "%C(%u)\n", (char)(i + 'A'), abc[i]);
+            fprintf(out, "%C(%u)\n", (char)(i + 'A'), abc[i]);
     }
-    putc('\n', _out);
+    putc('\n', out);
 }
 
 // видаляє текст в круглях дужках
@@ -85,12 +85,11 @@ int main(void)
     cout << "Enter maximal value of numbers in line: ";
     cin >> k;
     cout << "Enter the line, which finished with '.' ";
-    cin.getline(s, k, '.');
+    cin.getline(s, k, '.'); //введення даних з потоку до роздільника *.*
     cout << "count words odd: \n";
     count_words_odd(s);
     print_repchar(stdout, s);
-    // letter_frequency(p, total, k);
-    puts(s);
-    puts(str_rem(s, '(', ')'));
+    puts(s);                    //Виводить рядок s та перехід на наступний рядок
+    puts(str_rem(s, '(', ')')); //виводить рядок s з виделеним текстом в ()
     return 0;
 }
