@@ -1,38 +1,41 @@
 #include <iostream>
 #include <string>
 #include <stdio.h>
-#include <string>
-#include <conio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <conio.h>
 using namespace std;
-unsigned count_words_odd(const char *s)
+
+// кількість слів непарної довжини
+int count_words_odd(char *s)
 {
-    unsigned i = 0, n = 0;
+    int i = 0, n = 0;
     do
     {
-        if (isalnum(*s))
-            ++i;
+        if (isalnum(*s)) // Перевірка, чи є символ літерою або цифрою
+            ++i;         //інкремент
         else if (i > 0)
         {
             if (i & 1)
-                ++n;
+                ++n; //інкремент
             i = 0;
         }
-    } while (*s++ != '\0');
+    } while (*s++ != '\0'); //інкремент (\0 - закінчення рядка)
     return n;
 }
 
-//выводит на экран частоту вхождения каждой буквы
-void print_repchar(FILE *_out, const char *s)
+// частота входження кожної літери
+
+void print_repchar(FILE *out, char *s) // FILE out - потік
 {
     int i;
-    unsigned int abc[26];
+    int abc[26];
 
-    memset(abc, 0, sizeof(abc));
+    memset(abc, 0, sizeof(abc)); //заповнює перші sizeof(abc) - довжина в байтах цифрою 0
     while (*s)
     {
-        i = toupper(*s);
+        i = toupper(*s); //перетворює символ у верхній регістр
         if (i >= 'A' && i <= 'Z')
             ++abc[i - 'A'];
         ++s;
@@ -41,27 +44,27 @@ void print_repchar(FILE *_out, const char *s)
     for (i = 0; i < 26; ++i)
     {
         if (abc[i] > 0)
-            fprintf(_out, "%C(%u)\n", (char)(i + 'A'), abc[i]);
+            fprintf(out, "%C(%u)\n", (char)(i + 'A'), abc[i]);
     }
-    putc('\n', _out);
+    putc('\n', out);
 }
 
-//удаляет текст размещен в круглых скобках
-char *str_rem(char *s, char fc, char lc)
+// видаляє текст в круглях дужках
+char *str_rem(char *s, char f, char c)
 {
     char *i, *p, *t = s;
-    while (*s && (*s != fc))
+    while (*s && (*s != f))
         ++s;
 
     for (p = s; *s; *s = *p)
     {
-        if (*p == fc)
+        if (*p == f)
         {
             i = p + 1;
-            while (*i && (*i != lc))
+            while (*i && (*i != c))
                 ++i;
 
-            if (*i == lc)
+            if (*i == c)
             {
                 ++s;
                 p = i;
@@ -73,10 +76,20 @@ char *str_rem(char *s, char fc, char lc)
     }
     return t;
 }
-int main()
+
+int main(void)
 {
-    string str;
-    cout << "\nEnter the line: ";
-    cin >> str;
-    int c = 0, d = 0;
+    int total = 0;
+    int k, x, y;
+    char s[k];
+    cout << "Enter maximal value of numbers in line: ";
+    cin >> k;
+    cout << "Enter the line, which finished with '.' ";
+    cin.getline(s, k, '.'); //введення даних з потоку до роздільника *.*
+    printf("count words odd: %u\n", count_words_odd(s));
+    print_repchar(stdout, s);
+
+    puts(s);                    //Виводить рядок s та перехід на наступний рядок
+    puts(str_rem(s, '(', ')')); //виводить рядок s з виделеним текстом в ()
+    return 0;
 }
