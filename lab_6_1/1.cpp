@@ -45,17 +45,17 @@ int main()
             cout << setw(5) << line[i][j];
         }
     }
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
 
-        for (int j = 0; j < m; j++)
+        for (int j = 1; j < m; j++)
         {
             S += line[i][j];
         }
-        if (S1 <= S)
+        if (S > S1)
         {
-            S2 = i + 1;
             S1 = S;
+            S2 = i + 1;
         }
     }
     cout << "\nThe biggest sum value is in line: " << S2;
