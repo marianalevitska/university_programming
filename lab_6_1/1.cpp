@@ -45,20 +45,22 @@ int main()
             cout << setw(5) << line[i][j];
         }
     }
-    max = INT_MIN;
-    for (int i = 0; i < n; i++)
+    do
     {
-        int sum = 0;
-        for (int j = 0; j < m; j++)
+        for (int i = 1; i < n; i++)
         {
-            sum += line[i][j];
+            S1 = 0;
+            for (int j = 1; j < m; j++)
+            {
+                S += line[i][j];
+                if (S > S1)
+                {
+                    S1 = S;
+                    S2 = i + 1;
+                }
+            }
         }
-        if (max < sum)
-        {
-            max = sum;
-            row = i;
-        }
-    }
+    } while (S > S1);
     // max = -1;
     // row = 1;
     // for (int i = 0; i < N; i++)
