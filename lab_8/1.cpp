@@ -14,20 +14,20 @@ int count_words_odd(char *s)
     do
     {
         if (isalnum(*s)) // Перевірка, чи є символ літерою або цифрою
-            ++i;
+            ++i;         //інкремент
         else if (i > 0)
         {
             if (i & 1)
-                ++n;
+                ++n; //інкремент
             i = 0;
         }
-    } while (*s++ != '\0');
+    } while (*s++ != '\0'); //інкремент (\0 - закінчення рядка)
     return n;
 }
 
 // частота входження кожної літери
 
-void print_repchar(FILE *out, char *s) // FILE out - поток
+void print_repchar(FILE *out, char *s) // FILE out - потік
 {
     int i;
     int abc[26];
@@ -80,7 +80,7 @@ char *str_rem(char *s, char f, char c)
 int main(void)
 {
     int total = 0;
-    int k;
+    int k, x, y;
     char s[k];
     cout << "Enter maximal value of numbers in line: ";
     cin >> k;
@@ -88,6 +88,7 @@ int main(void)
     cin.getline(s, k, '.'); //введення даних з потоку до роздільника *.*
     printf("count words odd: %u\n", count_words_odd(s));
     print_repchar(stdout, s);
+
     puts(s);                    //Виводить рядок s та перехід на наступний рядок
     puts(str_rem(s, '(', ')')); //виводить рядок s з виделеним текстом в ()
     return 0;
