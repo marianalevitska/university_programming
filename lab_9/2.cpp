@@ -13,8 +13,9 @@ struct stud //описуємо структуру STUD
 int main()
 {
     int k = 4;
+    int l = 5;
     int count = 0;
-    int sum = -1;
+    int sum = 0;
     stud student[n];
     int i;
     for (i = 0; i < n; i++)
@@ -28,6 +29,7 @@ int main()
         cout << "Please enter student's IT MARK: " << endl;
         cin >> student[i].IT;
     }
+    cout << "Students who passed exams with one mark=4 " << endl;
 
     for (i = 0; i < n; i++)
     {
@@ -36,7 +38,18 @@ int main()
             student[i].math != k && student[i].physics != k && student[i].IT == k)
         {
             count += 1;
+            cout << "Surname " << student[i].surname << endl;
         }
     }
     cout << "The number of students with one 4 mark is " << count << endl;
+    cout << "Students who passed IT with the highest mark " << endl;
+    for (i = 0; i < n; i++)
+    {
+        if (student[i].IT == l)
+        {
+            sum += 1;
+            cout << "Surname " << student[i].surname << endl;
+        }
+    }
+    cout << "The number of students with IT 5 mark " << sum << endl;
 }
