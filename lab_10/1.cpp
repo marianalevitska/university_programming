@@ -1,52 +1,86 @@
+// #include <iostream>
+// #include <conio.h>
+
+// using namespace std;
+// int main()
+// {
+//     // setlocale(0, "russian");
+//     int n;
+//     int z[n];
+//     cout << "Enter the number of elements: ";
+//     cin >> n;
+
+//     // cout << " Array z : " << endl;
+
+//     cout << "Enter the elements of array z: " << endl;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> z[i];
+//     }
+
+//     int min_elem = z[0], min_elem_index, swap;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         if (min_elem > z[i])
+//         {
+//             min_elem = z[i];
+//             min_elem_index = i;
+//         }
+//     }
+
+//     swap = z[0];
+//     z[0] = z[min_elem_index];
+//     z[min_elem_index] = swap;
+
+//     cout << " Chenged array z : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         cout << i << " Array z elements =  " << z[i] << endl;
+//     }
+
+//     _getch();
+// }
+
 #include <iostream>
-#include <vector>
-#include <string>
+#include <conio.h>
+
 using namespace std;
-int main()
+int main(void)
 {
-    int n;
+    int n = 10;
+    // setlocale(0, "russian");
+    int z[n];
+    cout << " Random array : " << endl;
 
-    double min;
-    vector<double> z;
-
-    cout << "Enter the width of an array\n";
-    cin >> n;
-    for (size_t i = 0; i < n; ++i)
+    for (int i = 0; i <= n; i++)
     {
-        z.push_back(NULL);
-        cin >> z.back();
+        z[i] = rand() % 100;
+        cout << i << " array elements = " << z[i] << endl;
     }
-    cout << "\nArray\n";
-    for (size_t i = 0; i < z.size(); ++i)
+
+    int min_elem = z[0], min_elem_index, swap;
+
+    for (int i = 0; i <= n; i++)
     {
-        cout << z[i] << "   ";
-    }
-    cout << endl;
-
-    //Поиск максимального и минимального элементов массива
-
-    min = z[0];
-    for (size_t i = 1; i < z.size(); ++i)
-    {
-
-        if (min > z[i])
+        if (min_elem > z[i])
         {
-            min = z[i];
+            min_elem = z[i];
+            min_elem_index = i;
         }
     }
 
-    cout << "Minimal value of an array" << min << endl;
+    swap = z[0];
+    z[0] = z[min_elem_index];
+    z[min_elem_index] = swap;
 
-    auto pos_min = find(z.begin(), z.end(), min);
+    cout << " Changed array : " << endl;
 
-    z.swap(z[distance(z.begin(), pos_min)], z.front()); //замена наименьшего с первым
-
-    cout << "\nFinal Array\n";
-    for (size_t i = 0; i < z.size(); ++i)
+    for (int i = 0; i <= n; i++)
     {
-        cout << z[i] << "   ";
+        cout << i << " elements =  " << z[i] << endl;
     }
-    cout << endl;
-    return 0;
-    return 0;
+
+    _getch();
 }
