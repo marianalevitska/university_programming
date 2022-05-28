@@ -1,52 +1,107 @@
-#include <iostream>
+// #include <iostream>
+// #include <conio.h>
+
+// using namespace std;
+// int main()
+// {
+//     // setlocale(0, "russian");
+//     int n;
+//     int z[n];
+//     cout << "Enter the number of elements: ";
+//     cin >> n;
+
+//     // cout << " Array z : " << endl;
+
+//     cout << "Enter the elements of array z: " << endl;
+//     for (int i = 0; i < n; i++)
+//     {
+//         cin >> z[i];
+//     }
+
+//     int min_elem = z[0], min_elem_index, swap;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         if (min_elem > z[i])
+//         {
+//             min_elem = z[i];
+//             min_elem_index = i;
+//         }
+//     }
+
+//     swap = z[0];
+//     z[0] = z[min_elem_index];
+//     z[min_elem_index] = swap;
+
+//     cout << " Chenged array z : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         cout << i << " Array z elements =  " << z[i] << endl;
+//     }
+
+//     _getch();
+// }
+
+// #include <iostream>
+// #include <conio.h>
+
+// using namespace std;
+// int main(void)
+// {
+//     int n = 10;
+//     // setlocale(0, "russian");
+//     int z[n];
+//     cout << " Random array : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         z[i] = rand() % 100;
+//         cout << i << " array elements = " << z[i] << endl;
+//     }
+
+//     int min_elem = z[0], min_elem_index, swap;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         if (min_elem > z[i])
+//         {
+//             min_elem = z[i];
+//             min_elem_index = i;
+//         }
+//     }
+
+//     swap = z[0];
+//     z[0] = z[min_elem_index];
+//     z[min_elem_index] = swap;
+
+//     cout << " Changed array : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         cout << i << " elements =  " << z[i] << endl;
+//     }
+
+//     _getch();
+// }
+#include <iostream>>
 #include <vector>
-#include <string>
 using namespace std;
 int main()
 {
-    int n;
-
-    double min;
-    vector<double> z;
-
-    cout << "Enter the width of an array\n";
+    int n, k;
+    vector<int> Z[n];
+    cout << "\nEnter the number of elements: ";
     cin >> n;
-    for (size_t i = 0; i < n; ++i)
+    // 1.2. Записати у вектор значення [ 1, 2, 3, 4, 5 ]
+    for (int i = 0; i < Z.size(n); i++)
     {
-        z.push_back(NULL);
-        cin >> z.back();
+        Z.push_back(k);
+        cin >> k;
     }
-    cout << "\nArray\n";
-    for (size_t i = 0; i < z.size(); ++i)
-    {
-        cout << z[i] << "   ";
-    }
+
+    // 1.3. Вивести вектор на екран
+    for (int i = 0; i < Z.size(); i++)
+        cout << Z[i] << " ";
     cout << endl;
-
-    //Поиск максимального и минимального элементов массива
-
-    min = z[0];
-    for (size_t i = 1; i < z.size(); ++i)
-    {
-
-        if (min > z[i])
-        {
-            min = z[i];
-        }
-    }
-
-    cout << "Minimal value of an array" << min << endl;
-
-    auto pos_min = find(z.begin(), z.end(), min);
-
-    z.swap(z[distance(z.begin(), pos_min)], z.front()); //замена наименьшего с первым
-
-    cout << "\nFinal Array\n";
-    for (size_t i = 0; i < z.size(); ++i)
-    {
-        cout << z[i] << "   ";
-    }
-    cout << endl;
-    return 0;
-    return 0;
 }
