@@ -89,8 +89,19 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n, k;
     vector<int> Z[n];
     cout << "\nEnter the number of elements: ";
     cin >> n;
+    // 1.2. Записати у вектор значення [ 1, 2, 3, 4, 5 ]
+    for (int i = 0; i < Z.size(n); i++)
+    {
+        Z.push_back(k);
+        cin >> k;
+    }
+
+    // 1.3. Вивести вектор на екран
+    for (int i = 0; i < Z.size(); i++)
+        cout << Z[i] << " ";
+    cout << endl;
 }
