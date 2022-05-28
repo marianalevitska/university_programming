@@ -43,44 +43,54 @@
 //     _getch();
 // }
 
-#include <iostream>
-#include <conio.h>
+// #include <iostream>
+// #include <conio.h>
 
+// using namespace std;
+// int main(void)
+// {
+//     int n = 10;
+//     // setlocale(0, "russian");
+//     int z[n];
+//     cout << " Random array : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         z[i] = rand() % 100;
+//         cout << i << " array elements = " << z[i] << endl;
+//     }
+
+//     int min_elem = z[0], min_elem_index, swap;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         if (min_elem > z[i])
+//         {
+//             min_elem = z[i];
+//             min_elem_index = i;
+//         }
+//     }
+
+//     swap = z[0];
+//     z[0] = z[min_elem_index];
+//     z[min_elem_index] = swap;
+
+//     cout << " Changed array : " << endl;
+
+//     for (int i = 0; i <= n; i++)
+//     {
+//         cout << i << " elements =  " << z[i] << endl;
+//     }
+
+//     _getch();
+// }
+#include <iostream>>
+#include <vector>
 using namespace std;
-int main(void)
+int main()
 {
-    int n = 10;
-    // setlocale(0, "russian");
-    int z[n];
-    cout << " Random array : " << endl;
-
-    for (int i = 0; i <= n; i++)
-    {
-        z[i] = rand() % 100;
-        cout << i << " array elements = " << z[i] << endl;
-    }
-
-    int min_elem = z[0], min_elem_index, swap;
-
-    for (int i = 0; i <= n; i++)
-    {
-        if (min_elem > z[i])
-        {
-            min_elem = z[i];
-            min_elem_index = i;
-        }
-    }
-
-    swap = z[0];
-    z[0] = z[min_elem_index];
-    z[min_elem_index] = swap;
-
-    cout << " Changed array : " << endl;
-
-    for (int i = 0; i <= n; i++)
-    {
-        cout << i << " elements =  " << z[i] << endl;
-    }
-
-    _getch();
+    int n;
+    vector<int> Z[n];
+    cout << "\nEnter the number of elements: ";
+    cin >> n;
 }
