@@ -11,15 +11,34 @@ int main(void)
     string line;
     cout << "\nEnter line: " << endl;
 
-    for (decltype(v.size()) i = 0; i <= v.size() - 1; i++)
+    // for (decltype(v.size()) i = 0; i <= v.size() - 1; i++)
+    // {
+    //     cin >> line;
+    //     v[i] = line;
+    // }
+    // cout << endl;
+    // line.replace(line.find("a"), 1, "o");
+    for (int i = 0; i < v.size(); i++)
     {
         cin >> line;
         v[i] = line;
     }
-    cout << endl;
-    line.replace(line.find("a"), 1, "o");
 
-    cout << line << endl;
+    do
+    {
+        for (int i = 0; i < v.size(); i++)
+        {
+            if (v[i].find("a") != string::npos)
+            {
+                v[i].replace(v[i].find("a"), 1, "o");
+            }
+        }
+    } while (v[0].find("a") != string::npos);
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout << v[i] << endl;
+    }
+
     system("pause");
     return 0;
 }
