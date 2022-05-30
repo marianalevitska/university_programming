@@ -5,6 +5,48 @@
 #include <ctime>
 #include <chrono>
 using namespace std;
+int increment(int *interval, int size)
+{
+    int multiplier1, multiplier2, multiplier3, counter;
+    multiplier1 = multiplier2 = multiplier3 = 1;
+    counter = -1;
+    do
+    {
+        if (++counter % 2)
+        {
+            multiplier2 *= 2;
+            interval[counter] = 8 * multiplier1 - 6 * multiplier2 + 1;
+        }
+        else
+        {
+            multiplier3 *= 2;
+            interval[counter] = 9 * multiplier1 - 9 * multiplier3 + 1;
+        }
+        multiplier1 *= 2;
+    } while (3 * interval[counter] < size);
+    return ((counter > 0) ? (--counter) : (0));
+}
+void Sort(int *arr, int size)
+{
+    int interval;
+    int j;
+    int interval_arr[50];
+    int counter;
+    counter = increment(interval_arr, size);
+    while (counter >= 0)
+    {
+        interval = interval_arr[counter--];
+
+        for (int i = interval; i < size; i++)
+        {
+            int temp = arr[i];
+            for (j = i - interval; (j >= 0) && (arr[j] > temp); j -= interval)
+                arr[j + interval] = arr[j];
+            arr[j + interval] = temp;
+        }
+    }
+}
+
 void printArray(int *arr, int size)
 {
     cout << endl;
@@ -52,6 +94,15 @@ int main()
         arr[i] = (rand() % 600000) - 1000;
     }
     printArray(arr, n);
+    cout << "Shell sort " << endl;
+    chrono::duration<double> time1;
+    auto start1 = chrono::steady_clock::now();
+    Sort(arr, n);
+    auto end1 = chrono::steady_clock::now();
+    time1 = end1 - start1;
+    cout << endl;
+    cout << "Time: " << time1.count() << endl;
+    cout << endl;
     cout << "Enter key: ";
     cin >> key;
     cout << "Lineare search: " << endl;
