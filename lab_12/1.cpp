@@ -4,49 +4,32 @@
 #include <iomanip>
 #include <ctime>
 #include <chrono>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 using namespace std;
-
-int increment(int *interval, int n)
+int *SortShell(int *arr, int n)
 {
-    int multiplier1, multiplier2, multiplier3, counter;
-    multiplier1 = multiplier2 = multiplier3 = 1;
-    counter = -1;
-    do
+    int step = n / 2; // не обов’язково!
+    while (step > 0)
     {
-        if (++counter % 2)
+        for (int i = 0; i < n - step; i++)
         {
-            multiplier2 *= 2;
-            interval[counter] = 8 * multiplier1 - 6 * multiplier2 + 1;
+            int j = i;
+            while (j >= 0 && arr[j] > arr[j + step])
+            {
+                int t = arr[j];
+                arr[j] = arr[j + step];
+                arr[j + step] = t;
+                j--;
+            }
         }
-        else
-        {
-            multiplier3 *= 2;
-            interval[counter] = 9 * multiplier1 - 9 * multiplier3 + 1;
-        }
-        multiplier1 *= 2;
-    } while (3 * interval[counter] < n);
-    return ((counter > 0) ? (--counter) : (0));
-}
-
-void Sort(int *arr, int n)
-{
-    int interval;
-    int j;
-    int interval_arr[10];
-    int counter;
-    counter = increment(interval_arr, n);
-    while (counter >= 0)
-    {
-        interval = interval_arr[counter--];
-
-        for (int i = interval; i < n; i++)
-        {
-            int temp = arr[i];
-            for (j = i - interval; (j >= 0) && (arr[j] > temp); j -= interval)
-                arr[j + interval] = arr[j];
-            arr[j + interval] = temp;
-        }
+        step /= 2;
     }
+    cout << "Shell sort " << endl;
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << "\t";
+    return arr;
 }
 
 void printArray(int *arr, int size)
@@ -96,15 +79,19 @@ int main()
         arr[i] = (rand() % 600000) - 1000;
     }
     printArray(arr, n);
-    cout << "Shell sort " << endl;
-    chrono::duration<double> time1;
-    auto start1 = chrono::steady_clock::now();
-    Sort(arr, n);
-    auto end1 = chrono::steady_clock::now();
-    time1 = end1 - start1;
-    cout << endl;
-    cout << "Time: " << time1.count() << endl;
-    cout << endl;
+
+    for (i = 0; i < 10; i++)
+    {
+        chrono::duration<double> time1;
+        auto start1 = chrono::steady_clock::now();
+        arr = SortShell(arr, n);
+        auto end1 = chrono::steady_clock::now();
+        time1 = end1 - start1;
+        cout << endl;
+        cout << "Time: " << time1.count() << endl;
+        cout << endl;
+    }
+
     cout << "Enter key: ";
     cin >> key;
     cout << "Lineare search: " << endl;
