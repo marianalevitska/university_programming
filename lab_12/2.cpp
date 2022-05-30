@@ -56,6 +56,7 @@ void printArray(int *arr, int size)
         cout << arr[i] << "\t";
     cout << endl;
 }
+
 int binarySearch(int *arr, int key, int n, int l, int r)
 {
     while (r - 1 > 1)
