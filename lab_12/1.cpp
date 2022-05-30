@@ -5,7 +5,8 @@
 #include <ctime>
 #include <chrono>
 using namespace std;
-int increment(int *interval, int size)
+
+int increment(int *interval, int n)
 {
     int multiplier1, multiplier2, multiplier3, counter;
     multiplier1 = multiplier2 = multiplier3 = 1;
@@ -23,21 +24,22 @@ int increment(int *interval, int size)
             interval[counter] = 9 * multiplier1 - 9 * multiplier3 + 1;
         }
         multiplier1 *= 2;
-    } while (3 * interval[counter] < size);
+    } while (3 * interval[counter] < n);
     return ((counter > 0) ? (--counter) : (0));
 }
-void Sort(int *arr, int size)
+
+void Sort(int *arr, int n)
 {
     int interval;
     int j;
-    int interval_arr[50];
+    int interval_arr[10];
     int counter;
-    counter = increment(interval_arr, size);
+    counter = increment(interval_arr, n);
     while (counter >= 0)
     {
         interval = interval_arr[counter--];
 
-        for (int i = interval; i < size; i++)
+        for (int i = interval; i < n; i++)
         {
             int temp = arr[i];
             for (j = i - interval; (j >= 0) && (arr[j] > temp); j -= interval)
