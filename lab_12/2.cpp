@@ -136,6 +136,7 @@ int main()
     time2 = end2 - start2;
     cout << "Time: " << time2.count() << endl;
     cout << endl;
+    index = 0;
     cout << "Binary search: " << endl;
     chrono::duration<double> time3;
     auto start3 = chrono::steady_clock::now();
