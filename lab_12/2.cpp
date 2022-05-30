@@ -1,10 +1,55 @@
-// сортування по шелу лаба 12
+//сортування вибором прктична робота 4
+
 #include <iostream>
 #include <Windows.h>
 #include <iomanip>
 #include <ctime>
 #include <chrono>
 using namespace std;
+int *SelectionSort1(int *arr, int n)
+{
+    int count, choice;
+    for (int i = 0; i < n - 1; i++)
+    {
+        count = arr[i];
+        choice = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] > arr[choice])
+
+                choice = j;
+        if (choice != i)
+        {
+            arr[i] = arr[choice];
+            arr[choice] = count;
+        }
+    }
+    cout << "Selection sort in ascending order: " << endl;
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << "\t";
+    return arr;
+}
+int *SelectionSort2(int *arr, int n)
+{
+    int count, choice;
+    for (int i = 0; i < n - 1; i++)
+    {
+        count = arr[i];
+        choice = i;
+        for (int j = i + 1; j < n; j++)
+            if (arr[j] < arr[choice])
+
+                choice = j;
+        if (choice != i)
+        {
+            arr[i] = arr[choice];
+            arr[choice] = count;
+        }
+    }
+    cout << "Selection sort in descending order: " << endl;
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << "\t";
+    return arr;
+}
 void printArray(int *arr, int size)
 {
     cout << endl;
@@ -52,6 +97,24 @@ int main()
         arr[i] = (rand() % 600000) - 1000;
     }
     printArray(arr, n);
+    for (i = 0; i < 10; i++)
+    {
+        chrono::duration<double> time1;
+        auto start1 = chrono::steady_clock::now();
+        if (i % 2 == 0)
+        {
+            arr = SelectionSort1(arr, n);
+        }
+        else
+        {
+            arr = SelectionSort2(arr, n);
+        }
+        auto end1 = chrono::steady_clock::now();
+        time1 = end1 - start1;
+        cout << endl;
+        cout << "Time: " << time1.count() << endl;
+        cout << endl;
+    }
     cout << "Enter key: ";
     cin >> key;
     cout << "Lineare search: " << endl;
