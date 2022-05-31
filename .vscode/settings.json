@@ -33,6 +33,7 @@
     "iostream": "cpp",
     "iomanip": "cpp",
     "new": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iosfwd": "cpp"
   }
 }
