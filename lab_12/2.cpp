@@ -91,7 +91,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand(time(0));
-    int n = 100, i = 0, q, r = n - 1, l = 0, index = 0;
+    int n = 10, i = 0, q, r = n - 1, l = 0, index = 0;
     int key;
     int *arr = new int[n];
     for (i = 0; i < n; i++)
@@ -99,7 +99,7 @@ int main()
         arr[i] = (rand() % 600000) - 1000;
     }
     printArray(arr, n);
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < 5; i++)
     {
         chrono::duration<double> time1;
         auto start1 = chrono::steady_clock::now();
@@ -137,7 +137,7 @@ int main()
     time2 = end2 - start2;
     cout << "Time: " << time2.count() << endl;
     cout << endl;
-    index = 0;
+    // index = 0;
     cout << "Binary search: " << endl;
     chrono::duration<double> time3;
     auto start3 = chrono::steady_clock::now();

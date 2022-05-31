@@ -71,7 +71,7 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand(time(0));
-    int n = 100, i = 0, q;
+    int n = 10, i = 0, q;
     int r = n - 1;
     int l = 0;
     int index = 0;
@@ -83,7 +83,7 @@ int main()
     }
     printArray(arr, n);
 
-    for (i = 0; i < 10; i++)
+    for (i = 0; i < 5; i++)
     {
         chrono::duration<double> time1;
         auto start1 = chrono::steady_clock::now();
