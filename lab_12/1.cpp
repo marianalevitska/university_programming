@@ -71,7 +71,10 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand(time(0));
-    int n = 100, i = 0, q, r = n - 1, l = 0, index = 0;
+    int n = 100, i = 0, q;
+    int r = n - 1;
+    int l = 0;
+    int index = 0;
     int key;
     int *arr = new int[n];
     for (i = 0; i < n; i++)
