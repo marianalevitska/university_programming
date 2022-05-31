@@ -66,7 +66,7 @@ void AddInfo()
 {
     fstream myFile;
     // myFile.clear();
-    myFile.open("theList.txt", ios::app);
+    myFile.open("theList.txt", ios::out);
     cout << endl;
     cout << "Add some information: " << endl;
     string add;
@@ -84,7 +84,7 @@ void findStudent(stud *student, int sum, int count)
     readFile.close();
     fstream myFile;
     // myFile.clear();
-    myFile.open("theList.txt", ios::app);
+    myFile.open("theList.txt", ios::out);
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
