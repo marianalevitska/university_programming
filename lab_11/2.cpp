@@ -10,15 +10,13 @@ struct stud //описуємо структуру STUD
     string group;
     int ses[m];
 };
-void FillArray(stud *student)
+void FillArray(stud *student) //вхідні дані (поля структури) вводяться з клавіатури і після введення записуються у файл
+
 {
     string text = "";
     ofstream createFile("theList.txt");
     createFile.close();
-    // ifstream readFile("theList.txt");
-    // readFile.close();
     fstream myFile;
-    // myFile.clear();
     myFile.open("theList.txt", ios::out);
     if (myFile.is_open())
     {
@@ -46,12 +44,8 @@ void FillArray(stud *student)
         }
         myFile.close();
     }
-
-    // ofstream writeFile("theList.txt");
-    // writeFile << text;
-    // writeFile.close();
 }
-void Print()
+void Print() //дані з файлу виводяться на екран
 {
     fstream myFile;
     myFile.open("theList.txt", ios::in);
@@ -65,7 +59,7 @@ void Print()
         myFile.close();
     }
 }
-void AddInfo()
+void AddInfo() //можливість дописувати дані у файл
 {
     fstream myFile;
     // myFile.clear();
@@ -84,12 +78,8 @@ void AddInfo()
 }
 void findStudent(stud *student, int sum, int count)
 {
-    // ofstream createFile("theList.txt");
-    // createFile.close();
-    // ifstream readFile("theList.txt");
-    // readFile.close();
+
     fstream myFile;
-    // myFile.clear();
     myFile.open("theList.txt", ios::app);
     if (myFile.is_open())
     {
