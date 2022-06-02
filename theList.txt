@@ -1,0 +1,23 @@
+Please enter student's NAME: Lili
+Please enter student's GROUP: C-1
+Please enter student's GRADES: 
+5
+4
+5
+3
+5
+
+Please enter student's NAME: Colin
+Please enter student's GROUP: C-2
+Please enter student's GRADES: 
+4
+5
+2
+5
+4
+
+student which point above 4 
+Name Lili Group C-1
+student which point above 4 
+Name Colin Group C-2
+Great!!!
